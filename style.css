@@ -1,0 +1,179 @@
+/* General Body Styles */
+body {
+    margin: 0;
+    /* Using a common sans-serif stack. If you want 'Lato', uncomment the Google Fonts link in index.html and add 'font-family: 'Lato', sans-serif;' here. */
+    font-family: 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0; /* A neutral background for the page */
+    overflow: hidden; /* Prevent scrollbars if circles go slightly off-screen */
+}
+
+/* Container for the entire layout */
+.container {
+    width: 100vw; /* Take full viewport width */
+    height: 100vh; /* Take full viewport height */
+    display: flex;
+    flex-direction: column; /* Stack sections vertically */
+    position: relative; /* For general positioning context if needed */
+}
+
+/* Top Section (Purple) */
+.top-section {
+    background-color: #9b72cf; /* Adjusted purple color from design */
+    flex: 2.5; /* Slightly more space for the top section */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in element's total width and height */
+    position: relative; /* For positioning the circle */
+    overflow: hidden; /* Hide parts of the circle that go beyond */
+}
+
+.main-title {
+    font-size: 3.5em; /* Larger to match the design */
+    margin-bottom: 8px; /* Reduced margin for tighter spacing */
+    font-weight: 700; /* Bold font weight */
+    color: #4a4a4a; /* Dark grey for text */
+    text-align: center;
+    line-height: 1.2; /* Adjust line height if words break */
+}
+
+.subtitle {
+    font-size: 1.8em; /* Slightly larger */
+    margin-bottom: 5px; /* Tighter spacing */
+    color: #4a4a4a; /* Dark grey for text */
+    text-align: center;
+}
+
+.tagline {
+    font-size: 1.5em; /* Larger */
+    color: #4a4a4a; /* Dark grey for text */
+    text-align: center;
+    margin-top: 10px; /* Added slight top margin */
+}
+
+/* Bottom Section (White) */
+.bottom-section {
+    background-color: #ffffff; /* White color */
+    flex: 1; /* Takes up less space than top */
+    display: flex;
+    justify-content: center; /* Center button horizontally */
+    align-items: center; /* Center button vertically */
+    position: relative; /* For positioning the circle */
+    overflow: hidden; /* Hide parts of the circle that go beyond */
+}
+
+/* Start Button */
+.start-button {
+    background-color: #8bc34a; /* Green button color */
+    color: white;
+    padding: 15px 50px; /* Wider padding for a larger button */
+    border: none;
+    border-radius: 30px; /* Rounded corners */
+    font-size: 1.3em; /* Slightly larger text */
+    font-weight: bold; /* Bold text */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.start-button:hover {
+    background-color: #7cb342; /* Slightly darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Circles */
+.circle {
+    position: absolute;
+    background-color: #f4b6cb; /* Pink color for the circles */
+    border-radius: 50%; /* Make it perfectly round */
+    z-index: 0; /* Ensure circles are behind text/button if needed */
+}
+
+.top-section .circle {
+    /* Position relative to top-section */
+    top: -100px; /* Move partially out of view */
+    right: -80px; /* Move partially out of view */
+    width: 250px; /* Size of the circle */
+    height: 250px; /* Size of the circle */
+}
+
+.bottom-section .circle {
+    /* Position relative to bottom-section */
+    bottom: -100px; /* Move partially out of view */
+    left: -80px; /* Move partially out of view */
+    width: 200px; /* Size of the circle */
+    height: 200px; /* Size of the circle */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5em;
+    }
+
+    .subtitle {
+        font-size: 1.4em;
+    }
+
+    .tagline {
+        font-size: 1.2em;
+    }
+
+    .start-button {
+        padding: 12px 40px;
+        font-size: 1.1em;
+    }
+
+    .top-section .circle {
+        width: 180px;
+        height: 180px;
+        top: -70px;
+        right: -60px;
+    }
+
+    .bottom-section .circle {
+        width: 150px;
+        height: 150px;
+        bottom: -70px;
+        left: -60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 2em;
+    }
+
+    .subtitle {
+        font-size: 1.1em;
+    }
+
+    .tagline {
+        font-size: 1em;
+    }
+
+    .start-button {
+        padding: 10px 30px;
+        font-size: 1em;
+    }
+
+    .top-section .circle {
+        width: 120px;
+        height: 120px;
+        top: -40px;
+        right: -40px;
+    }
+
+    .bottom-section .circle {
+        width: 100px;
+        height: 100px;
+        bottom: -40px;
+        left: -40px;
+    }
+}
